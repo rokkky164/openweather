@@ -9,7 +9,6 @@ from rest_framework.views import APIView
 from rest_framework_json_api import serializers
 
 from .models import Weather
-# from .serializers import CitySerializer
 
 
 CITIES = {
