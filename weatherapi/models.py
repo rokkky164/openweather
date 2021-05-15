@@ -1,3 +1,4 @@
+from datetime import datetime
 from django.db import models
 from jsonfield import JSONField
 from collections import OrderedDict
@@ -15,3 +16,6 @@ class Weather(models.Model):
 	time_frequency = models.CharField(max_length=50, null=True, choices=Timechoices)
 	city = models.CharField(max_length=255, verbose_name="City")
 	time_stamp = models.DateTimeField(verbose_name='TimeStamp', auto_now_add=True)
+
+	def __str_(self):
+		return self.city + ' ' + datetime.strftime(self.time_stamp, "%d-%b-%y")
